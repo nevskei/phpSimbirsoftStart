@@ -3,6 +3,7 @@ $from = "";
 $to = "";
 $error = "";
 $value_from = $_POST["FROM"];
+
 if (isset($value_from) && strspn($_POST["FROM"], "-1234567890") == strlen($_POST["FROM"])) {
     $from = (int)$_POST["FROM"];
 } else if (isset($_POST["FROM"]) && strspn($_POST["FROM"], "-1234567890") < strlen($_POST["FROM"])) {
