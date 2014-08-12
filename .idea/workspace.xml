@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48845754-b679-4fb2-b68c-395fa1596a4f" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\WebServers\home\phpcourse\www\phpSimbirsoftStart\photo\user1.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -29,9 +30,12 @@
       <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="438" selection-start="2848" selection-end="2848" vertical-scroll-proportion="0.72293365" vertical-offset="739" max-vertical-offset="1615">
+            <state line="84" column="100" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.782305" vertical-offset="756" max-vertical-offset="1615">
               <folding>
-                <marker date="1407874208103" expanded="true" signature="2864:2931" placeholder="..." />
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1407887695157" expanded="true" signature="2966:3033" placeholder="..." />
+                <marker date="1407887695157" expanded="true" signature="3071:3096" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -141,17 +145,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="286" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="304" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="recentsLimit" value="5" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="308" />
-    <property name="options.lastSelected" value="vcs.Git" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="308" />
+    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="C:/Program Files (x86)/Git/bin/git.exe" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="310" />
@@ -162,9 +161,15 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FullScreen" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="options.lastSelected" value="vcs.Git" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -233,7 +238,11 @@
       <created>1407806602435</created>
       <updated>1407806602435</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Добавил инфу о себе">
+      <created>1407874247299</created>
+      <updated>1407874247299</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -245,7 +254,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.67099565" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.08802083" sideWeight="0.67099565" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -270,7 +279,8 @@
     </option>
     <MESSAGE value="test" />
     <MESSAGE value="+перепилил код немного. &#10;+Изменил кодировку&#10;&#10;-нужно добавить инфу о себе&#10;-Изменить верстку" />
-    <option name="LAST_COMMIT_MESSAGE" value="+перепилил код немного. &#10;+Изменил кодировку&#10;&#10;-нужно добавить инфу о себе&#10;-Изменить верстку" />
+    <MESSAGE value="Добавил инфу о себе" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил инфу о себе" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -280,9 +290,31 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="438" selection-start="2848" selection-end="2848" vertical-scroll-proportion="0.0" vertical-offset="1360" max-vertical-offset="1615">
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1407887695157" expanded="true" signature="2966:3033" placeholder="..." />
+            <marker date="1407887695157" expanded="true" signature="3071:3096" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="49" column="13" selection-start="1473" selection-end="1473" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1598">
           <folding>
-            <marker date="1407874208103" expanded="true" signature="2864:2931" placeholder="..." />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1407887695157" expanded="true" signature="2966:3033" placeholder="..." />
+            <marker date="1407887695157" expanded="true" signature="3071:3096" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -308,9 +340,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="438" selection-start="2848" selection-end="2848" vertical-scroll-proportion="0.72293365" vertical-offset="739" max-vertical-offset="1615">
+        <state line="84" column="100" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.782305" vertical-offset="756" max-vertical-offset="1615">
           <folding>
-            <marker date="1407874208103" expanded="true" signature="2864:2931" placeholder="..." />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1407887695157" expanded="true" signature="2966:3033" placeholder="..." />
+            <marker date="1407887695157" expanded="true" signature="3071:3096" placeholder="..." />
           </folding>
         </state>
       </provider>

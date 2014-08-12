@@ -29,7 +29,7 @@ switch ($_POST['action']) {
 <!DOCTYPE html>
 <html>
 <head>Задание по курсам SimbirSoft</head>
-<body>
+<body style="background-image: url(img/background.jpg); background-repeat: no-repeat; color: white">
 <form method='POST'>
     <table>
         <tr>
@@ -78,11 +78,11 @@ switch ($_POST['action']) {
     ?>
 </div>
 <?php
-$users = array(array("name" => "Ивасев Александр", "about" => "ВУЗ: УлГТУ '14<br/>Факультет: Информационных систем и технологий<br/>Кафедра: Вычислительной техники<br/>Форма обучения: Дневное отделение<br/>Статус: Магистр<br/>", "photo" => "photo/user1.jpg"),array("name" => "Морозов Роман", "about" => "Окончил УлГТУ, ФИСТ. Работаю Веб-программистом. Играю на гитаре, занимаюсь спортом, выращиваю рыбок =)", "photo" => "photo/user2.jpg"));
+$users = array(array("name" => "Ивасев Александр", "about" => "ВУЗ: УлГТУ '14<br/>Факультет: Информационных систем и технологий<br/>Кафедра: Вычислительной техники<br/>Форма обучения: Дневное отделение<br/>Статус: Магистр<br/>", "photo" => "img/photo/user1.jpg"),array("name" => "Морозов Роман", "about" => "Окончил УлГТУ, ФИСТ. Работаю Веб-программистом. Играю на гитаре, занимаюсь спортом, выращиваю рыбок =)", "photo" => "img/photo/user2.jpg"));
 
 echo "<table>";
 foreach ($users as $value)
-    echo "<tr><td><img width=200 src='{$value['photo']}'></td><td><p>{$value['name']}</p><p>{$value['about']}</p></td></tr>";
+    echo "<tr><td><img width=200 src='{$value['photo']}'></td><td  style='background-color: dimgray'><p>{$value['name']}</p><p>{$value['about']}</p></td></tr>";
 echo "</table>";
 ?>
 
