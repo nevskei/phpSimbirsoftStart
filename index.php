@@ -26,53 +26,57 @@ switch ($_POST['action']) {
         break;
 }
 ?>
-    <form method='POST'>
-        <table>
-            <tr>
-                <td>
-                    От
-                </td>
-                <td>
-                    <input type='text' name='from' value="<?= $value_from ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    До
-                </td>
-                <td>
-                    <input type='text' name='to' value="<?= $value_to ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                </td>
-                <td>
-                    <input type="hidden" name="action" value="odd_range">
-                    <input type='submit' name="Submit">
-                </td>
-            </tr>
-        </table>
-    </form>
-    <div style="color:green;">
-        <?php
-        if (!$error) { // если ошибок нет
-            if (!($value_from % 2)) // если число 'От' четное,
-                $value_from++; // то ++, чтобы сделать стартовой точкой для цикла
+<!DOCTYPE html>
+<html>
+<head>Задание по курсам SimbirSoft</head>
+<body>
+<form method='POST'>
+    <table>
+        <tr>
+            <td>
+                От
+            </td>
+            <td>
+                <input type="text" name="from" value="<?= $value_from ?>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                До
+            </td>
+            <td>
+                <input type="text" name="to" value="<?= $value_to ?>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <input type="hidden" name="action" value="odd_range">
+                <input type='submit' name="Submit">
+            </td>
+        </tr>
+    </table>
+</form>
+<div style="color:green;">
+    <?php
+    if (!$error) { // если ошибок нет
+        if (!($value_from % 2)) // если число 'От' четное,
+            $value_from++; // то ++, чтобы сделать стартовой точкой для цикла
 
-            for ($i = $value_from; $i <= $value_to; $i += 2) { // цикл "через 2"
-                $value_odd .= $i . " "; // запись значений в переменную
-            }
-            if ($value_odd) { // если есть хоть одно значение
-                //выводим результат
-                echo "Последовательность нечетных чисел вдиапазоне от {$_POST['from']} до {$_POST['to']}: <br/>";
-                echo $value_odd;
-            }
+        for ($i = $value_from; $i <= $value_to; $i += 2) { // цикл "через 2"
+            $value_odd .= $i . " "; // запись значений в переменную
+        }
+        if ($value_odd) { // если есть хоть одно значение
+            //выводим результат
+            echo "Последовательность нечетных чисел в диапазоне от {$_POST['from']} до {$_POST['to']}: <br/>";
+            echo $value_odd;
+        }
 
-        } else
-            echo '<p style="color:red;">' . $error . '</p>'
-        ?>
-    </div>
+    } else
+        echo '<p style="color:red;">' . $error . '</p>'
+    ?>
+</div>
 <?php
 $users = array(array("name" => "Ивасев Александр", "about" => "ВУЗ: УлГТУ '14<br/>Факультет: Информационных систем и технологий<br/>Кафедра: Вычислительной техники<br/>Форма обучения: Дневное отделение<br/>Статус: Магистр<br/>", "photo" => "photo/user1.jpg"));
 echo "<table>";
@@ -80,3 +84,6 @@ foreach ($users as $value)
     echo "<tr><td><img width=200 src='{$value['photo']}'></td><td><p>{$value['name']}</p><p>{$value['about']}</p></td></tr>";
 echo "</table>";
 ?>
+
+</body>
+</html>
