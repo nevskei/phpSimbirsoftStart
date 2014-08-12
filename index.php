@@ -1,30 +1,39 @@
 <?php
-$from = "";
-$to = "";
-$error = "";
-$value_from = $_POST["FROM"];
+$error = false; // по умолчанию ошибок нет
+$value_from = ""; // значение 'От'
+$value_to = ""; // значение 'До'
+$value_odd = false; // нечетные значения диапазона
 
-if (isset($value_from) && strspn($_POST["FROM"], "-1234567890") == strlen($_POST["FROM"])) {
-    $from = (int)$_POST["FROM"];
-} else if (isset($_POST["FROM"]) && strspn($_POST["FROM"], "-1234567890") < strlen($_POST["FROM"])) {
-    $error .= "В поле 'От' должны быть введены только цифры <br/>";
+switch ($_POST['action']) {
+    case 'odd_range':
+
+        // приводим полученные переменный в нормальный вид
+        $value_from = $_POST["from"];
+        $value_to = $_POST["to"];
+
+        if (empty($value_from)) //если пустое
+            $error .= "Поле 'От' не может быть пустым <br/>";
+        else if (!is_numeric($value_from)) // если не пустое, но не число
+            $error .= "В поле 'От' должны быть введены только цифры <br/>";
+
+        if (empty($value_to))
+            $error .= "Поле 'До' не может быть пустым <br/>";
+        else if (!is_numeric($value_to))
+            $error .= "В поле 'До' должны быть введены только цифры <br/>";
+
+        if (!$error && ($value_from > $value_to)) // если нет ошибок, но диапазон неправильный
+            $error .= "'До' должно быть больше  'От'";
+        break;
 }
-if (isset($_POST["TO"]) && strspn($_POST["TO"], "-1234567890") == strlen($_POST["TO"])) {
-    $to = (int)$_POST["TO"];
-} else if (isset($_POST["TO"]) && strspn($_POST["TO"], "-1234567890") < strlen($_POST["TO"])) {
-    $error .= "В поле 'До' должны быть введены только цифры  <br/>";
-}
-if (empty($error) && $from > $to)
-    $error .= "'До' должно быть больше  'От'";
 ?>
-    <form method='post'>
+    <form method='POST'>
         <table>
             <tr>
                 <td>
                     От
                 </td>
                 <td>
-                    <input type='text' name='FROM' value="<?php echo $from ?>">
+                    <input type='text' name='from' value="<?= $value_from ?>">
                 </td>
             </tr>
             <tr>
@@ -32,13 +41,14 @@ if (empty($error) && $from > $to)
                     До
                 </td>
                 <td>
-                    <input type='text' name='TO' value="<?php echo $to ?>">
+                    <input type='text' name='to' value="<?= $value_to ?>">
                 </td>
             </tr>
             <tr>
                 <td>
                 </td>
                 <td>
+                    <input type="hidden" name="action" value="odd_range">
                     <input type='submit' name="Submit">
                 </td>
             </tr>
@@ -46,15 +56,20 @@ if (empty($error) && $from > $to)
     </form>
     <div style="color:green;">
         <?php
-        if (empty($error))
-            for ($i = ($from % 2 == 1 || $from % 2 == -1) ? $from : $from + 1; $i <= $to; $i += 2) {
-                if ($i > $from + 1)
-                    echo ", ";
-                else
-                    echo "Последовательность нечетных чисел вдиапазоне от {$from} до {$to}: <br/>";
-                echo $i;
+        if (!$error) { // если ошибок нет
+            if (!($value_from % 2)) // если число 'От' четное,
+                $value_from++; // то ++, чтобы сделать стартовой точкой для цикла
+
+            for ($i = $value_from; $i <= $value_to; $i += 2) { // цикл "через 2"
+                $value_odd .= $i . " "; // запись значений в переменную
             }
-        else
+            if ($value_odd) { // если есть хоть одно значение
+                //выводим результат
+                echo "Последовательность нечетных чисел вдиапазоне от {$_POST['from']} до {$_POST['to']}: <br/>";
+                echo $value_odd;
+            }
+
+        } else
             echo '<p style="color:red;">' . $error . '</p>'
         ?>
     </div>
