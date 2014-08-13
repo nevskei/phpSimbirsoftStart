@@ -2,7 +2,7 @@
 $error = false; // по умолчанию ошибок нет
 $value_from = ""; // значение 'От'
 $value_to = ""; // значение 'До'
-$value_odd = false; // нечетные значения диапазона
+
 
 switch ($_POST['action']) {
     case 'odd_range':
@@ -21,6 +21,11 @@ switch ($_POST['action']) {
         else if (!is_numeric($value_to))
             $error .= "В поле 'До' должны быть введены только цифры <br/>";
 
+        if (($value_from < -2147483648) || ($value_from > 2147483647))
+            $error .= "Введеное значени 'От' превышает допустимый лимит <br/>";
+        if (($value_to < -2147483648) || ($value_to > 2147483647))
+            $error .= "Введеное значени 'До' превышает допустимый лимит <br/>";
+
         if (!$error && ($value_from > $value_to)) // если нет ошибок, но диапазон неправильный
             $error .= "'До' должно быть больше  'От'";
         break;
@@ -29,7 +34,7 @@ switch ($_POST['action']) {
 <!DOCTYPE html>
 <html>
 <head>Задание по курсам SimbirSoft</head>
-<body style="background-image: url(img/background.jpg); background-repeat: no-repeat; color: white">
+<body style="background-image: url(img/background.jpg); background-repeat: repeat-y; color: white">
 <form method='POST'>
     <table>
         <tr>
@@ -60,17 +65,12 @@ switch ($_POST['action']) {
 </form>
 <div style="color:green;">
     <?php
-    if (!$error) { // если ошибок нет
+    if (!$error && $_POST['action']) { // если ошибок нет
         if (!($value_from % 2)) // если число 'От' четное,
             $value_from++; // то ++, чтобы сделать стартовой точкой для цикла
-
+        echo "Последовательность нечетных чисел в диапазоне от {$_POST['from']} до {$_POST['to']}: <br/>";
         for ($i = $value_from; $i <= $value_to; $i += 2) { // цикл "через 2"
-            $value_odd .= $i . " "; // запись значений в переменную
-        }
-        if ($value_odd) { // если есть хоть одно значение
-            //выводим результат
-            echo "Последовательность нечетных чисел в диапазоне от {$_POST['from']} до {$_POST['to']}: <br/>";
-            echo $value_odd;
+            echo $i . " "; // запись значений в переменную
         }
 
     } else
@@ -78,7 +78,9 @@ switch ($_POST['action']) {
     ?>
 </div>
 <?php
-$users = array(array("name" => "Ивасев Александр", "about" => "ВУЗ: УлГТУ '14<br/>Факультет: Информационных систем и технологий<br/>Кафедра: Вычислительной техники<br/>Форма обучения: Дневное отделение<br/>Статус: Магистр<br/>", "photo" => "img/photo/user1.jpg"),array("name" => "Морозов Роман", "about" => "Окончил УлГТУ, ФИСТ. Работаю Веб-программистом. Играю на гитаре, занимаюсь спортом, выращиваю рыбок =)", "photo" => "img/photo/user2.jpg"));
+$users = array(array("name" => "Ивасев Александр", "about" => "ВУЗ: УлГТУ '14<br/>Факультет: Информационных систем и технологий<br/>Кафедра: Вычислительной техники<br/>Форма обучения: Дневное отделение<br/>Статус: Магистр<br/>", "photo" => "img/photo/user1.jpg"),
+               array("name" => "Морозов Роман", "about" => "Окончил УлГТУ, ФИСТ. Работаю Веб-программистом. Играю на гитаре, занимаюсь спортом, выращиваю рыбок =)", "photo" => "img/photo/user2.jpg")
+        );
 
 echo "<table>";
 foreach ($users as $value)
