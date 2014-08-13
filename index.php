@@ -29,6 +29,15 @@ switch ($_POST['action']) {
         if (!$error && ($value_from > $value_to)) // если нет ошибок, но диапазон неправильный
             $error .= "'До' должно быть больше  'От'";
         break;
+    case 'task2_2':
+        //include
+        break;
+    case 'task2_3':
+        //include
+        break;
+    case 'task2_4':
+        //include
+        break;
 }
 ?>
 <!DOCTYPE html>
