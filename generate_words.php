@@ -4,15 +4,17 @@ if ($_POST['action'] == 'generate_word') {
     $symbols_word = $_POST['symbols'];
     $length_word = $_POST['length'];
     $count_word = $_POST['count'];
-   // var_dump($symbols_word);
+
+
+    $symbols_word = iconv("UTF-8", "windows-1251", $symbols_word);
     $count_symbols = strlen($symbols_word);
     for ($j = 0; $j < $count_word; $j++) {
         $temp_str = '';
         for ($i = 0; $i < $length_word; $i++) {
             $temp_str .= $symbols_word[rand(0, $count_symbols - 1)];
         }
+        $temp_str = iconv("windows-1251", "UTF-8", $temp_str);
         echo "<b>".($j+1)."</b> ".$temp_str . "</br>";
-      //  var_dump($temp_str);
     }
     exit();
 }
