@@ -1,4 +1,0 @@
-phpSimbirsoftStart
-==================
-
-php
