@@ -1,0 +1,39 @@
+<?php
+
+namespace Acme\DemoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="user")
+ */
+class Book
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $title;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $pages;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $created;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $updated;
+}

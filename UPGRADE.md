@@ -148,7 +148,7 @@ The file has been converted to a YAML file which reads as follows:
         database_port:     ~
         database_name:     symfony
         database_user:     root
-        database_password: ~
+        database_password: 123456
 
         mailer_transport:  smtp
         mailer_host:       localhost

@@ -1,37 +1,61 @@
-{% extends "AcmeDemoBundle::layout.head.footer.html.twig" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% block head %}
+    <title>{% block title 'Demo Bundle' %}</title>
+
+    {% block stylesheets %}
     <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" />
-{% endblock %}
-
-{% block title 'Demo Bundle' %}
-
-{% block body %}
-    {% for flashMessage in app.session.flashbag.get('notice') %}
-        <div class="flash-message">
-            <em>Notice</em>: {{ flashMessage }}
-        </div>
-    {% endfor %}
-
-    {% block content_header %}
-        <ul id="menu">
-            {% block content_header_more %}
-                <li><a href="{{ path('_demo') }}">Demo Home</a></li>
-            {% endblock %}
-        </ul>
-
-        <div style="clear: both"></div>
     {% endblock %}
 
-    <div class="block">
-        {% block content %}{% endblock %}
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="container">
+        {% block body '' %}
     </div>
 
-    {% if code is defined %}
-        <h2>Code behind this page</h2>
-        <div class="block">
-            <div class="symfony-content">{{ code|raw }}</div>
-        </div>
-    {% endif %}
-{% endblock %}
+    {% block javascripts %}
+        <script src="//code.jquery.com/jquery-2.1.1.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                'use strict';
+
+                $('form#delete').submit(function (e) {
+                    var $form = $(this), $hidden = $form.find('input[name="modal"]');
+                    if ($hidden.val() === '0') {
+                        e.preventDefault();
+                        $('#delete_confirm').modal('show');
+                        $('#delete_confirm').find('button.btn-danger').click(function () {
+                            $('#delete_confirm').modal('hide');
+                            $hidden.val('1');
+                            $form.submit();
+                        });
+                    }
+                });
+
+                $('button.filter').click(function () {
+                    var $icon = $(this).find('i'), target = $(this).attr('data-target');
+                    if ($icon.length) {
+                        if ($(target).height() > 0) {
+                            $icon.attr('class', 'fa fa-angle-down');
+                        } else {
+                            $icon.attr('class', 'fa fa-angle-right');
+                        }
+                    }
+                });
+            });
+        </script>
+    {% endblock %}
+</body>
+</html>

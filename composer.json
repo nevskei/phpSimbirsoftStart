@@ -17,10 +17,14 @@
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+        "doctrine/doctrine-fixtures-bundle": "2.2.*",
+        "lexik/form-filter-bundle": "2.0.*",
+        "knplabs/knp-paginator-bundle": "~2.4"
     },
     "require-dev": {
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "~2.3",
+        "pugx/generator-bundle": "2.4.*"
     },
     "scripts": {
         "post-root-package-install": [
